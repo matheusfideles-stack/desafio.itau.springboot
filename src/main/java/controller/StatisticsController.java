@@ -1,12 +1,13 @@
 package controller;
 
+/**
+ * @author Matheus Fideles
+ */
+
 import Service.TransactionService;
 import dto.StatisticsResponse;
-import dto.TransactionRequest;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.DoubleSummaryStatistics;
 
@@ -20,9 +21,14 @@ public class StatisticsController {
         this.transactionService = transactionService;
     }
 
+    // Retorna as estatísticas das transações dos últimos 60 segundos
     @GetMapping
     public ResponseEntity<StatisticsResponse> getStatistics() {
+
         DoubleSummaryStatistics stats = transactionService.getStatics();
-        return ResponseEntity.ok(new StatisticsResponse(stats));
+
+        return ResponseEntity.ok(
+                new StatisticsResponse(stats)
+        );
     }
 }

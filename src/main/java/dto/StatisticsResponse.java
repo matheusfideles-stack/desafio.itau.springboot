@@ -2,6 +2,12 @@ package dto;
 
 import java.util.DoubleSummaryStatistics;
 
+/**
+ * DTO utilizado para retornar as estatísticas das transações.
+ *
+ * @author Matheus Fideles
+ */
+
 public class StatisticsResponse {
 
     private long count;
@@ -37,5 +43,4 @@ public class StatisticsResponse {
     public double getMax() {
         return max;
     }
-
 }

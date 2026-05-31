@@ -4,6 +4,12 @@ import jakarta.validation.constraints.NotNull;
 
 import java.time.OffsetDateTime;
 
+/**
+ * DTO utilizado para receber os dados de uma transação.
+ *
+ * @author Matheus Fideles
+ */
+
 public class TransactionRequest {
 
     @NotNull

@@ -1,5 +1,9 @@
 package controller;
 
+/**
+ * @author Matheus Fideles
+ */
+
 import Service.TransactionService;
 import dto.TransactionRequest;
 import jakarta.validation.Valid;
@@ -20,16 +24,28 @@ public class TransactionController {
         this.transactionService = transactionService;
     }
 
+    // Cadastra uma nova transação
     @PostMapping
-    public ResponseEntity<Void> createTransaction(@Valid @RequestBody TransactionRequest resquest) {
-            if (resquest.getDataHora().isAfter(OffsetDateTime.now()) || resquest.getValor() <=0) {
-                    return ResponseEntity.unprocessableEntity().build();
-            }
-            transactionService.addTransaction(new Transaction(resquest.getValor(), resquest.getDataHora()));
+    public ResponseEntity<Void> createTransaction(
+            @Valid @RequestBody TransactionRequest request) {
+
+        // Valida data futura e valor inválido
+        if (request.getDataHora().isAfter(OffsetDateTime.now())
+                || request.getValor() <= 0) {
+            return ResponseEntity.unprocessableEntity().build();
+        }
+
+        transactionService.addTransaction(
+                new Transaction(
+                        request.getValor(),
+                        request.getDataHora()
+                )
+        );
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    // Remove todas as transações armazenadas
     @DeleteMapping
     public ResponseEntity<Void> clearTransactions() {
         transactionService.clearTransactions();
