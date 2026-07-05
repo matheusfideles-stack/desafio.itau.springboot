@@ -1,5 +1,4 @@
-package model;
-
+package desafio.itau.springboot.model;
 /**
  * Representa uma transação financeira.
  * Armazena o valor e a data/hora da transação.
