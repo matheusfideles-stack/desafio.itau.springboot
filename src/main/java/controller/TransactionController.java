@@ -1,4 +1,4 @@
-package controller;
+package desafio.itau.springboot.controller;
 
 /**
  * @author Matheus Fideles
