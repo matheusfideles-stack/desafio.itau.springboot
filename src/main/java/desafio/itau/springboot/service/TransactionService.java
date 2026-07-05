@@ -1,14 +1,12 @@
-package Service;
-
+package desafio.itau.springboot.service;
 /**
  * Serviço responsável por armazenar e processar as transações.
  *
  * @author Matheus Fideles
  */
 
-import model.Transaction;
 import org.springframework.stereotype.Service;
-
+import desafio.itau.springboot.model.Transaction;
 import java.time.OffsetDateTime;
 import java.util.DoubleSummaryStatistics;
 import java.util.Queue;
