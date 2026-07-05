@@ -1,11 +1,10 @@
-package controller;
-
+package desafio.itau.springboot.controller;
 /**
  * @author Matheus Fideles
  */
 
-import Service.TransactionService;
-import dto.StatisticsResponse;
+import desafio.itau.springboot.service.TransactionService;
+import desafio.itau.springboot.dto.StatisticsResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
