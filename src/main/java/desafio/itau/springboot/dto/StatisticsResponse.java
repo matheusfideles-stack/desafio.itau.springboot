@@ -1,5 +1,4 @@
-package dto;
-
+package desafio.itau.springboot.dto;
 import java.util.DoubleSummaryStatistics;
 
 /**
